@@ -1,0 +1,23 @@
+{
+	"userInfo": {
+		"userName":	"test user",
+		"userId": "PX0000001",
+		"phoneNumber": "08012345678",
+		"accountInfo":[
+			{
+				"address": "東京都ああああ",
+				"zipCode": "123-4567",
+				"country": "日本",
+				"number": 10,
+				"array": ["val1", "val2", "val3"]
+			},
+			{
+				"address": "福岡県いいいいい",
+				"zipCode": "0000-0000",
+				"country": "日本",
+				"number": 20,
+				"array": ["val9", "val8", "val7"]
+			}
+		]
+	}
+}

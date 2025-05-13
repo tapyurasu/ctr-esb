@@ -1,0 +1,23 @@
+module ESB
+{
+	struct reqObj {
+		string userId;
+	};
+	struct userInfo {
+		string userName;
+		string userId;
+		string phoneNumber;
+		string accountInfo;
+	};
+	struct accountInfo {
+		string address;
+		string zipCode;
+		string country;
+		string number;
+		string array;
+	};
+ 	interface CTR
+ 	{
+   		long sayHello(in reqObj req, out userInfo userInfo, out accountInfo accountInfo);
+ 	};
+};
