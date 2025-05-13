@@ -1,0 +1,19 @@
+# Javaコンパイル結果
+/bin/
+/out/
+*.class
+
+# 一時ファイル
+*.log
+*.tmp
+*.swp
+*~
+
+# OSごとの不要ファイル
+.DS_Store
+Thumbs.db
+
+# === Eclipse ===
+.project
+.classpath
+.settings/
