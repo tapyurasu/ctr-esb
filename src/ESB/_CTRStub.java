@@ -5,7 +5,7 @@ package ESB;
 * ESB/_CTRStub.java .
 * IDL-to-Javaコンパイラ(ポータブル)、バージョン"3.2"によって生成されました
 * ESB.idlから
-* 2025年5月9日 7時45分48秒 JST
+* 2025年5月15日 7時10分12秒 JST
 */
 
 public class _CTRStub extends org.omg.CORBA.portable.ObjectImpl implements ESB.CTR

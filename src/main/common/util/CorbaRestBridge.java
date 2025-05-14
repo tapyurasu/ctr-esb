@@ -1,4 +1,4 @@
-package main.util;
+package main.common.util;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -104,9 +104,6 @@ public class CorbaRestBridge {
                 e.printStackTrace();
             }
         }
-
-        // 正常終了フラグ（固定で0）
-        corbaOutputClass.getField("result").set(resultObj, 0);
         return resultObj;
     }
 

@@ -9,57 +9,8 @@ import org.omg.PortableServer.POAHelper;
 
 import ESB.CTR;
 import ESB.CTRHelper;
-import ESB.CTRPOA;
-import ESB.accountInfoHolder;
-import ESB.reqObj;
-import ESB.userInfoHolder;
-import main.model.CorbaOutput;
-import main.util.CorbaRestBridge;
+import main.impl.CTRImpl;
 
-class CTRImpl extends CTRPOA {
-	private ORB orb;
-	public void setORB(ORB orb_val) {
-		orb = orb_val;
-	}
-	@Override
-	public int sayHello(reqObj req, userInfoHolder userInfo, accountInfoHolder accountInfo) {
-		// TODO 自動生成されたメソッド・スタブ 
-		try {
-			// マッピング定義読み込み
-			CorbaRestBridge bridge = new CorbaRestBridge("src/main/resources/mapper/mapping.properties");
-
-			// RESTリクエストJSONを作成
-			String jsonRequest = bridge.buildRestRequestJson("getUserInfo", req);
-			System.out.println("★ RESTリクエスト:");
-			System.out.println(jsonRequest);
-			
-			// 実際にREST APIを呼び出す（URLとメソッドは仮）
-			String apiUrl = "http://localhost:8080/api/user";
-			String method = "POST";
-			
-			String jsonResponse = bridge.callRestApi(apiUrl, method, jsonRequest);
-			System.out.println("★ RESTレスポンス:");
-			System.out.println(jsonResponse);
-			
-			// CORBAレスポンス構造体に変換
-			CorbaOutput output = (CorbaOutput) bridge.convertRestResponseToCorbaOutput(
-			    "getUserInfo", jsonResponse, CorbaOutput.class
-			);
-			
-			// 結果出力
-			System.out.println("\n★ CORBAレスポンス:");
-			System.out.println("UserName: " + output.UserName);
-			System.out.println("UserId: " + output.UserId);
-			System.out.println("PhoneNumber: " + output.PhoneNumber);
-			System.out.println("AccountInfo: " + output.AccountInfo);
-			System.out.println("result: " + output.result);
-		} catch (Exception e) {
-        System.err.println("エラー発生: " + e.getMessage());
-        e.printStackTrace();
-		}
-		return 0;
-	}
-}
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
@@ -102,3 +53,4 @@ public class Main {
         System.out.println("HelloServer Exiting ...");
     }
 }
+
